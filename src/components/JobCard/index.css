@@ -1,0 +1,138 @@
+.job-item {
+  background-color: #202020;
+  width: 90%;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+}
+
+.company-logo {
+  width: 60px;
+  height: 60px;
+}
+
+.titleName {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0px;
+}
+
+.star {
+  color: #fbbf24;
+}
+
+.company-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.title-rating-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-left: 15px;
+  height: 60px;
+}
+
+.rating-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.rating {
+  font-size: 15px;
+  font-weight: 500;
+  margin-left: 6px;
+}
+
+.location-salary-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location-and-employment-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.location-container {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.location {
+  margin-left: 8px;
+}
+
+.salary {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.line1 {
+  border-color: #b6c5ff;
+}
+
+.description-heading {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.job-description {
+  margin-top: 0px;
+  padding-top: 0px;
+  font-size: 16px;
+  color: #f1f5f9;
+}
+
+.link-job-item {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .job-item {
+    width: 100%;
+  }
+  .company-logo {
+    height: 50px;
+    width: 50px;
+  }
+  .title-rating-container {
+    height: 50px;
+  }
+  .titleName {
+    font-size: 14px;
+  }
+  .rating {
+    font-size: 12px;
+  }
+  .location {
+    font-size: 12px;
+  }
+  .icon {
+    font-size: 17px;
+  }
+  .salary {
+    font-size: 13px;
+  }
+  .description-heading {
+    font-size: 14px;
+  }
+  .job-description {
+    font-size: 12px;
+  }
+}

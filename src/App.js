@@ -11,18 +11,22 @@ const employmentTypesList = [
   {
     label: 'Full Time',
     employmentTypeId: 'FULLTIME',
+    isSelected: false,
   },
   {
     label: 'Part Time',
     employmentTypeId: 'PARTTIME',
+    isSelected: false,
   },
   {
     label: 'Freelance',
     employmentTypeId: 'FREELANCE',
+    isSelected: false,
   },
   {
     label: 'Internship',
     employmentTypeId: 'INTERNSHIP',
+    isSelected: false,
   },
 ]
 
@@ -47,22 +51,20 @@ const salaryRangesList = [
 
 // Replace your code here
 const App = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route exact path="/login" component={LoginForm} />
-      <ProtectedRoute exact path="/" component={Home} />
-      <ProtectedRoute
-        exact
-        path="/jobs"
-        component={() => (
-          <AllJobsSection
-            salaryRangesList={salaryRangesList}
-            employmentTypesList={employmentTypesList}
-          />
-        )}
-      />
-    </Switch>
-  </BrowserRouter>
+  <Switch>
+    <Route exact path="/login" component={LoginForm} />
+    <ProtectedRoute exact path="/" component={Home} />
+    <ProtectedRoute
+      exact
+      path="/jobs"
+      component={() => (
+        <AllJobsSection
+          salaryRangesList={salaryRangesList}
+          employmentTypesList={employmentTypesList}
+        />
+      )}
+    />
+  </Switch>
 )
 
 export default App

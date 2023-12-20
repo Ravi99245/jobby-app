@@ -1,7 +1,7 @@
 import {Link, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import {MdHome, MdLogout} from 'react-icons/md'
-import {BsBriefcaseFill} from 'react-icons/bi'
+import {BsBriefcaseFill} from 'react-icons/bs'
 
 import './index.css'
 
@@ -35,6 +35,9 @@ const Header = props => {
               </Link>
             </li>
             <li className="nav-item">
+              <Link to="/jobs" className="mobile-link-item">
+                <BsBriefcaseFill className="icon" />
+              </Link>
               <Link to="/jobs" className="link-item">
                 Jobs
               </Link>
