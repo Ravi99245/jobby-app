@@ -1,8 +1,9 @@
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import ProtectedRoute from './components/ProtectedRoute'
 import LoginForm from './components/LoginForm'
 import Home from './components/Home'
 import AllJobsSection from './components/AllJobsSection'
+import JobItemDetails from './components/JobItemDetails'
 
 import './App.css'
 
@@ -64,6 +65,7 @@ const App = () => (
         />
       )}
     />
+    <ProtectedRoute exact path="/jobs/:id" component={JobItemDetails} />
   </Switch>
 )
 
