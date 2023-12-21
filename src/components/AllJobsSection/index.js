@@ -17,7 +17,7 @@ const apiStatusText = {
 
 class AllJobsSection extends Component {
   state = {
-    employmetType: '',
+    employmentType: [],
     salaryRange: '',
     apiStatus: apiStatusText.initial,
     jobsList: [],
@@ -32,8 +32,10 @@ class AllJobsSection extends Component {
 
   getJobsList = async () => {
     const jwtToken = Cookies.get('jwt_token')
-    const {searchInput, salaryRange} = this.state
-    const url = `https://apis.ccbp.in/jobs?employment_type=&minimum_package=${salaryRange}&search=${searchInput}`
+    const {searchInput, salaryRange, employmentType} = this.state
+    const typeOfEmployment = employmentType.join()
+    console.log(typeOfEmployment)
+    const url = `https://apis.ccbp.in/jobs?employment_type=${typeOfEmployment}&minimum_package=${salaryRange}&search=${searchInput}`
     const options = {
       headers: {
         Authorization: `Bearer ${jwtToken}`,
@@ -82,6 +84,7 @@ class AllJobsSection extends Component {
 
   renderJobsView = () => {
     const {jobsList, total} = this.state
+
     const showJobsList = total > 0
     return showJobsList ? (
       <div className="cards-content">
@@ -94,10 +97,14 @@ class AllJobsSection extends Component {
     ) : (
       <div className="jobs-failure-container">
         <img
-          src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+          src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png "
           alt="failure view"
           className="job-failure-image"
         />
+        <h1 className="no-jobs-heading">No Jobs Found</h1>
+        <p className="no-jobs-description">
+          We could not found any jobs. Try other filters.
+        </p>
       </div>
     )
   }
@@ -107,6 +114,27 @@ class AllJobsSection extends Component {
       {salaryRange: range, apiStatus: apiStatusText.inProgress},
       this.getJobsList,
     )
+  }
+
+  updateEmploymentType = employment => {
+    const {employmentType} = this.state
+    if (!employmentType.includes(employment)) {
+      this.setState(
+        prevState => ({
+          employmentType: [...prevState.employmentType, employment],
+          apiStatus: apiStatusText.inProgress,
+        }),
+        this.getJobsList,
+      )
+    } else {
+      const updateItems = employmentType.filter(
+        eachItem => eachItem !== employment,
+      )
+      this.setState(
+        {employmentType: updateItems, apiStatus: apiStatusText.inProgress},
+        this.getJobsList,
+      )
+    }
   }
 
   renderAllJobs = () => {
@@ -152,6 +180,7 @@ class AllJobsSection extends Component {
               salaryRangesList={salaryRangesList}
               employmentTypesList={employmentTypesList}
               updateSalaryRange={this.updateSalaryRange}
+              updateEmploymentType={this.updateEmploymentType}
             />
           </div>
           <div className="job-card-container">

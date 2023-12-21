@@ -65,9 +65,27 @@
   display: none;
 }
 
+.jobs-failure-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  min-height: 80vh;
+  width: 70%;
+  text-align: center;
+}
+
+.job-failure-image {
+  width: 40%;
+}
+
 @media screen and (max-width: 768px) {
   .all-jobs-section {
     width: 100%;
+  }
+  .job-failure-image {
+    width: 60%;
   }
   .jobs-container {
     display: flex;

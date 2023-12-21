@@ -3,13 +3,19 @@ import ProfileCard from '../ProfileCard'
 import './index.css'
 
 const FiltersGroup = props => {
-  const {salaryRangesList, employmentTypesList, updateSalaryRange} = props
+  const {
+    salaryRangesList,
+    employmentTypesList,
+    updateSalaryRange,
+    updateEmploymentType,
+  } = props
 
   const handleOptionChange = event => {
     updateSalaryRange(event.target.value)
   }
 
   const handleEmploymentChange = event => {
+    updateEmploymentType(event.target.value)
     console.log(event.target.value)
   }
 

@@ -36,6 +36,8 @@
 .checkbox {
   width: 15px;
   height: 15px;
+  cursor: pointer;
+  outline: none;
 }
 
 .employment {
