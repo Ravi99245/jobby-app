@@ -6,6 +6,7 @@ import {MdLocationOn} from 'react-icons/md'
 import {BsBriefcaseFill} from 'react-icons/bs'
 
 import Header from '../Header'
+import SimilarJobCard from '../SimilarJobCard'
 
 import './index.css'
 
@@ -180,6 +181,12 @@ class JobItemDetails extends Component {
             </div>
           </div>
         </div>
+        <h1 className="similar-heading">Similar Jobs</h1>
+        <div className="similar-job-container">
+          {similarJobs.map(eachItem => (
+            <SimilarJobCard key={eachItem.id} similarJob={eachItem} />
+          ))}
+        </div>
       </>
     )
   }
@@ -199,7 +206,6 @@ class JobItemDetails extends Component {
         return this.renderLoadingView()
       case apiStatusText.failure:
         return this.renderFailureView()
-
       default:
         return null
     }

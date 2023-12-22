@@ -50,7 +50,13 @@
   }
   .home-heading {
     font-size: 30px;
-    width: 90%;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .home-content {
+    padding: 20px;
+    padding-top: 0px;
+    margin-top: 40px;
   }
   .home-container {
     background-image: url('https://assets.ccbp.in/frontend/react-js/home-sm-bg.png');
@@ -58,10 +64,19 @@
     background-size: cover;
   }
   .home-description {
-    font-size: 15px;
+    font-size: 18px;
     width: 90%;
+    line-height: 1.5;
+    margin-top: 15px;
   }
   .home-content {
     justify-content: flex-start;
+  }
+  .jobs-button {
+    font-size: 17px;
+    padding: 10px 14px 10px 14px;
+    min-height: 50px;
+    width: 120px;
+    margin-top: 12px;
   }
 }

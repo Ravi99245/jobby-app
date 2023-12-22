@@ -1,6 +1,7 @@
 import {Link, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
-import {MdHome, MdLogout} from 'react-icons/md'
+import {MdHome} from 'react-icons/md'
+import {FiLogOut} from 'react-icons/fi'
 import {BsBriefcaseFill} from 'react-icons/bs'
 
 import './index.css'
@@ -49,6 +50,14 @@ const Header = props => {
             onClick={onClickLogout}
           >
             Logout
+          </button>
+          <button
+            aria-label="log-out"
+            className="mobile-logout-button"
+            type="button"
+            onClick={onClickLogout}
+          >
+            <FiLogOut className="icon" />
           </button>
         </div>
       </div>

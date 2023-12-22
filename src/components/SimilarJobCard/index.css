@@ -1,0 +1,60 @@
+.similar-job-content {
+  background-color: #202020;
+  padding: 25px;
+  margin: 20px;
+  margin-left: 0px;
+  color: #ffffff;
+  font-family: 'Roboto';
+  border-radius: 15px;
+  width: 30%;
+  min-height: 500px;
+}
+
+.similar-job-logo {
+  width: 70px;
+  height: 70px;
+}
+
+.logo-and-title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 70px;
+}
+
+.title-and-rating-container {
+  height: 60px;
+  margin-left: 10px;
+}
+
+.title-heading {
+  font-size: 20px;
+  margin: 0px;
+}
+
+.similarJob-description-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.similar-job-description {
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.location-and-employmentType-container {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .similar-job-content {
+    width: 100%;
+    min-height: 150px;
+  }
+  .similarJob-description-title {
+    font-weight: 500;
+    font-size: 18px;
+  }
+}

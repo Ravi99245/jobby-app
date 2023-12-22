@@ -68,6 +68,9 @@
   color: #ffffff;
 }
 
+.mobile-logout-button {
+  display: none;
+}
 @media screen and (max-width: 768px) {
   .mobile-link-item {
     display: block;
@@ -76,6 +79,25 @@
     display: none;
   }
   .nav-logo {
-    width: 100px;
+    width: 55px;
+  }
+  .nav-header {
+    height: 50px;
+  }
+  .mobile-logout-button {
+    display: block;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    border: none;
+  }
+  .logout-button {
+    display: none;
+  }
+  .header-items-container {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-end;
   }
 }
