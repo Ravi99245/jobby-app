@@ -96,6 +96,7 @@
   }
   .filters-group {
     width: 100%;
+    padding: 0px;
   }
   .job-card-container {
     width: 90%;
@@ -130,4 +131,36 @@
     border-radius: 5px;
     margin-top: 20px;
   }
+}
+
+.jobs-failure-image {
+  width: 80%;
+}
+
+.jobs-failure-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.jobs-failure-retry-button {
+  border: none;
+  background-color: #4f46e5;
+  padding: 12px 16px 12px 16px;
+  color: #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+
+.jobs-failure-text {
+  color: #cbd5e1;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.input-container {
+  margin-top: 25px;
 }

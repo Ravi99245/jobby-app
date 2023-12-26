@@ -28,7 +28,7 @@ const JobCard = props => {
             alt="company logo"
           />
           <div className="title-rating-container">
-            <p className="titleName">{title}</p>
+            <h1 className="titleName">{title}</h1>
             <div className="rating-container">
               <FaStar className="star" />
               <p className="rating">{rating}</p>
@@ -49,7 +49,7 @@ const JobCard = props => {
           <p className="salary">{packagePerAnnum}</p>
         </div>
         <hr className="line1" />
-        <p className="description-heading">Description</p>
+        <h1 className="description-heading">Description</h1>
         <p className="job-description">{jobDescription}</p>
       </li>
     </Link>

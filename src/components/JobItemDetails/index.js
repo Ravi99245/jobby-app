@@ -7,6 +7,7 @@ import {BsBriefcaseFill} from 'react-icons/bs'
 
 import Header from '../Header'
 import SimilarJobCard from '../SimilarJobCard'
+import SkillItem from '../SkillItem'
 
 import './index.css'
 
@@ -116,10 +117,10 @@ class JobItemDetails extends Component {
             <img
               src={companyLogoUrl}
               className="company-logo"
-              alt="company logo"
+              alt="job details company logo"
             />
             <div className="title-rating-container">
-              <p className="titleName">{title}</p>
+              <h1 className="titleName">{title}</h1>
               <div className="rating-container">
                 <FaStar className="star" />
                 <p className="rating">{rating}</p>
@@ -141,7 +142,7 @@ class JobItemDetails extends Component {
           </div>
           <hr className="line1" />
           <div className="description-container">
-            <p className="description-heading">Description</p>
+            <h1 className="description-heading">Description</h1>
             <button className="anchor-button" type="button">
               <a
                 href={companyWebsiteUrl}
@@ -158,14 +159,7 @@ class JobItemDetails extends Component {
             <h1 className="skills-heading">Skills</h1>
             <ul className="skill-items">
               {skills.map(eachItem => (
-                <li className="skill-list-item">
-                  <img
-                    src={eachItem.imageUrl}
-                    className="skill-image"
-                    alt={eachItem.name}
-                  />
-                  <p className="skill-name">{eachItem.name}</p>
-                </li>
+                <SkillItem key={eachItem.name} skill={eachItem} />
               ))}
             </ul>
           </div>
@@ -182,11 +176,11 @@ class JobItemDetails extends Component {
           </div>
         </div>
         <h1 className="similar-heading">Similar Jobs</h1>
-        <div className="similar-job-container">
+        <ul className="similar-job-container">
           {similarJobs.map(eachItem => (
             <SimilarJobCard key={eachItem.id} similarJob={eachItem} />
           ))}
-        </div>
+        </ul>
       </>
     )
   }
@@ -194,6 +188,27 @@ class JobItemDetails extends Component {
   renderLoadingView = () => (
     <div className="loader-container" data-testid="loader">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
+    </div>
+  )
+
+  renderFailureView = () => (
+    <div className="jobs-failure-container">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+        alt="failure view"
+        className="jobs-failure-image"
+      />
+      <h1 className="jobs-failure-heading">Oops! Something Went Wrong</h1>
+      <p className="jobs-failure-text">
+        We cannot seem to find the page you are looking for.
+      </p>
+      <button
+        className="jobs-failure-retry-button"
+        type="button"
+        onClick={this.getJobItemDetails}
+      >
+        Retry
+      </button>
     </div>
   )
 

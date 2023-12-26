@@ -44,21 +44,25 @@ const Header = props => {
               </Link>
             </li>
           </ul>
-          <button
-            className="logout-button"
-            type="button"
-            onClick={onClickLogout}
-          >
-            Logout
-          </button>
-          <button
-            aria-label="log-out"
-            className="mobile-logout-button"
-            type="button"
-            onClick={onClickLogout}
-          >
-            <FiLogOut className="icon" />
-          </button>
+          <li>
+            <button
+              className="logout-button"
+              type="button"
+              onClick={onClickLogout}
+            >
+              Logout
+            </button>
+          </li>
+          <li>
+            <button
+              aria-label="log-out"
+              className="mobile-logout-button"
+              type="button"
+              onClick={onClickLogout}
+            >
+              <FiLogOut className="icon" />
+            </button>
+          </li>
         </div>
       </div>
     </nav>

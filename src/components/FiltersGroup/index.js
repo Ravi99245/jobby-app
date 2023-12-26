@@ -1,4 +1,3 @@
-import Cookies from 'js-cookie'
 import ProfileCard from '../ProfileCard'
 import './index.css'
 
@@ -51,7 +50,7 @@ const FiltersGroup = props => {
         <hr className="line" />
         <div className="employment-container">
           <h1 className="employment-type">Salary Range</h1>
-          <form className="employment-list">
+          <ul className="employment-list">
             {salaryRangesList.map(eachItem => (
               <li className="employment-item" key={eachItem.label}>
                 <input
@@ -70,7 +69,7 @@ const FiltersGroup = props => {
                 </label>
               </li>
             ))}
-          </form>
+          </ul>
         </div>
       </div>
     </>

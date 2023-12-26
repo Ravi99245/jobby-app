@@ -98,12 +98,12 @@ class AllJobsSection extends Component {
       <div className="jobs-failure-container">
         <img
           src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png "
-          alt="failure view"
+          alt="no jobs"
           className="job-failure-image"
         />
         <h1 className="no-jobs-heading">No Jobs Found</h1>
         <p className="no-jobs-description">
-          We could not found any jobs. Try other filters.
+          We could not find any jobs. Try other filters
         </p>
       </div>
     )
@@ -136,6 +136,27 @@ class AllJobsSection extends Component {
       )
     }
   }
+
+  renderFailureView = () => (
+    <div className="jobs-failure-container">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+        alt="failure view"
+        className="jobs-failure-image"
+      />
+      <h1 className="jobs-failure-heading">Oops! Something Went Wrong</h1>
+      <p className="jobs-failure-text">
+        We cannot seem to find the page you are looking for.
+      </p>
+      <button
+        className="jobs-failure-retry-button"
+        type="button"
+        onClick={this.getFilteredJobs}
+      >
+        Retry
+      </button>
+    </div>
+  )
 
   renderAllJobs = () => {
     const {apiStatus} = this.state

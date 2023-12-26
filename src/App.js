@@ -4,6 +4,7 @@ import LoginForm from './components/LoginForm'
 import Home from './components/Home'
 import AllJobsSection from './components/AllJobsSection'
 import JobItemDetails from './components/JobItemDetails'
+import NotFound from './components/NotFound'
 
 import './App.css'
 
@@ -66,6 +67,7 @@ const App = () => (
       )}
     />
     <ProtectedRoute exact path="/jobs/:id" component={JobItemDetails} />
+    <Route component={NotFound} />
   </Switch>
 )
 
